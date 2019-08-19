@@ -8,12 +8,12 @@ mixin DialogStreamMixin {
 
   void dialogListen(void Function(DialogState) onData) {
     _listen = _dialogState.stream.distinct(
-      (previus, next) {
-        if (previus is ShowDialogState && next is ShowDialogState)
-          return previus.title == next.title &&
-              previus.description == next.description;
+      (previous, next) {
+        if (previous is ShowDialogState && next is ShowDialogState)
+          return previous.title == next.title &&
+              previous.description == next.description;
         else
-          return previus == next;
+          return previous == next;
       },
     ).listen(onData);
   }
