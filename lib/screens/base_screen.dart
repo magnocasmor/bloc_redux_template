@@ -55,7 +55,7 @@ class BaseScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         viewModel.userName,
-                        style: Theme.of(context).textTheme.overline.copyWith(
+                        style: Theme.of(context).textTheme.subhead.copyWith(
                               color: Colors.white,
                             ),
                       ),

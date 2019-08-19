@@ -56,16 +56,11 @@ class ScheduleDialogScreen extends StatelessWidget {
               child: CustomButton(
                 label: 'SCHEDULE',
                 onPressed: () {
-                  Future.delayed(
-                    Duration(seconds: 10),
-                    () {
-                      StoreProvider.of<AppState>(context).dispatch(
-                        ScheduleGlobalDialogAction(
-                          _titleController.text,
-                          _descriptionController.text,
-                        ),
-                      );
-                    },
+                  StoreProvider.of<AppState>(context).dispatch(
+                    ScheduleGlobalDialogAction(
+                      _titleController.text,
+                      _descriptionController.text,
+                    ),
                   );
                   _scaffoldKey.currentState.hideCurrentSnackBar();
                   _scaffoldKey.currentState.showSnackBar(

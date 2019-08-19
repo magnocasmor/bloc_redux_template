@@ -14,18 +14,23 @@ final List<Middleware<AppState>> middlewares = [
 
 void _showDialogMiddleware(Store<AppState> store,
     ScheduleGlobalDialogAction action, NextDispatcher next) {
-  showDialog(
-    context: store.state.mainContext,
-    builder: (context) {
-      return AlertDialog(
-        title: Text(action.title),
-        content: Text(action.description),
-        actions: <Widget>[
-          FlatButton(
-            child: Text('OK'),
-            onPressed: Routes.pop,
-          ),
-        ],
+  Future.delayed(
+    Duration(seconds: 10),
+    () {
+      showDialog(
+        context: store.state.mainContext,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(action.title),
+            content: Text(action.description),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('OK'),
+                onPressed: Routes.pop,
+              ),
+            ],
+          );
+        },
       );
     },
   );
