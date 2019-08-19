@@ -1,0 +1,1 @@
+# bloc_redux_template
