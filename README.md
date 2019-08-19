@@ -1,1 +1,3 @@
-# bloc_redux_template
+# bloc_redux_example
+
+Template to use Bloc and Redux in Flutter
